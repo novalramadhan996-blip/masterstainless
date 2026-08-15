@@ -43,11 +43,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link
-          to="/"
-          className="flex shrink-0 items-center gap-2.5"
-          aria-label={COMPANY.name}
-        >
+        <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label={COMPANY.name}>
           <img
             src={logoMark}
             alt={`Logo ${COMPANY.name}`}
@@ -58,9 +54,7 @@ export function Navbar() {
 
           <span
             className={`text-lg font-extrabold uppercase tracking-tight ${
-              solid
-                ? "text-foreground"
-                : "text-primary-foreground"
+              solid ? "text-foreground" : "text-primary-foreground"
             }`}
           >
             Master
@@ -76,9 +70,7 @@ export function Navbar() {
               to={link.to}
               hash={"hash" in link ? link.hash : undefined}
               className={`rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors hover:text-accent ${
-                solid
-                  ? "text-foreground/80"
-                  : "text-primary-foreground/90"
+                solid ? "text-foreground/80" : "text-primary-foreground/90"
               }`}
               activeProps={{
                 className: "text-accent",
@@ -111,11 +103,7 @@ export function Navbar() {
               : "border-primary-foreground/30 text-primary-foreground"
           }`}
         >
-          {open ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
@@ -175,16 +163,8 @@ export function Navbar() {
               ))}
 
               {/* Mobile CTA */}
-              <Button
-                asChild
-                variant="gold"
-                size="lg"
-                className="mt-2"
-              >
-                <Link
-                  to="/contact"
-                  onClick={() => setOpen(false)}
-                >
+              <Button asChild variant="gold" size="lg" className="mt-2">
+                <Link to="/contact" onClick={() => setOpen(false)}>
                   Minta Penawaran
                 </Link>
               </Button>

@@ -51,7 +51,8 @@ export function About() {
                     <h3 className="font-bold text-foreground">Fokus Kami</h3>
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Memberikan hasil fabrikasi yang fungsional, kuat, rapi, dan sesuai dengan kebutuhan setiap proyek.
+                    Memberikan hasil fabrikasi yang fungsional, kuat, rapi, dan sesuai dengan
+                    kebutuhan setiap proyek.
                   </p>
                 </div>
               </Reveal>
@@ -62,7 +63,8 @@ export function About() {
                     <h3 className="font-bold text-foreground">Pengerjaan Terintegrasi</h3>
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Kebutuhan proyek dapat dibahas dari konsultasi, pengukuran, desain, fabrikasi, finishing, hingga pemasangan.
+                    Kebutuhan proyek dapat dibahas dari konsultasi, pengukuran, desain, fabrikasi,
+                    finishing, hingga pemasangan.
                   </p>
                 </div>
               </Reveal>

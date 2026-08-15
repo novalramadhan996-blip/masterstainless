@@ -89,11 +89,13 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
   /* Design tokens */
-  --gradient-hero: radial-gradient(60% 80% at 80% 10%, oklch(0.82 0.18 82 / 0.34), transparent 62%),
+  --gradient-hero:
+    radial-gradient(60% 80% at 80% 10%, oklch(0.82 0.18 82 / 0.34), transparent 62%),
     radial-gradient(55% 65% at 8% 92%, oklch(0.62 0.19 245 / 0.28), transparent 62%);
   --gradient-gold: linear-gradient(135deg, oklch(0.87 0.17 92), oklch(0.74 0.19 62));
   --gradient-dark: linear-gradient(160deg, oklch(0.21 0.04 265.75), oklch(0.17 0.03 265));
-  --shadow-soft: 0 4px 20px -4px oklch(0.21 0.04 265.75 / 0.08), 0 2px 8px -4px oklch(0.21 0.04 265.75 / 0.06);
+  --shadow-soft:
+    0 4px 20px -4px oklch(0.21 0.04 265.75 / 0.08), 0 2px 8px -4px oklch(0.21 0.04 265.75 / 0.06);
   --shadow-elevated: 0 24px 60px -20px oklch(0.21 0.04 265.75 / 0.22);
   --shadow-gold: 0 14px 38px -8px oklch(0.8 0.19 78 / 0.55);
 }
@@ -136,7 +138,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     letter-spacing: -0.02em;
   }
 }

@@ -68,7 +68,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "monthly" as const,
             priority: "0.7",
             images: [
-              { loc: absoluteUrl(p.image), title: `${p.title} stainless steel`, caption: p.description },
+              {
+                loc: absoluteUrl(p.image),
+                title: `${p.title} stainless steel`,
+                caption: p.description,
+              },
             ],
           })),
           ...BLOG.map((b) => ({

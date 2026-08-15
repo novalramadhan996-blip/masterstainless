@@ -95,12 +95,13 @@ export const Route = createFileRoute("/artikel/$slug")({
   component: ArticleDetail,
 });
 
-
 function ArticleNotFound() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-40 text-center">
       <h1 className="text-3xl font-extrabold text-foreground">Artikel tidak ditemukan</h1>
-      <p className="mt-3 text-muted-foreground">Artikel yang Anda cari mungkin sudah dipindahkan.</p>
+      <p className="mt-3 text-muted-foreground">
+        Artikel yang Anda cari mungkin sudah dipindahkan.
+      </p>
       <Button asChild variant="gold" className="mt-8">
         <Link to="/">Kembali ke Beranda</Link>
       </Button>
@@ -158,7 +159,6 @@ function ArticleDetail() {
             </figure>
           </Reveal>
 
-
           <div className="mt-12 space-y-10">
             {post.body.map((section, i) => (
               <Reveal key={section.heading ?? `intro-${i}`} delay={0.05}>
@@ -166,7 +166,9 @@ function ArticleDetail() {
                   {section.heading && (
                     <h2 className="text-2xl font-extrabold text-foreground">{section.heading}</h2>
                   )}
-                  <div className={`space-y-4 text-base leading-relaxed text-muted-foreground ${section.heading ? "mt-4" : ""}`}>
+                  <div
+                    className={`space-y-4 text-base leading-relaxed text-muted-foreground ${section.heading ? "mt-4" : ""}`}
+                  >
                     {section.paragraphs.map((para) => (
                       <p key={para}>{para}</p>
                     ))}
@@ -177,7 +179,9 @@ function ArticleDetail() {
           </div>
 
           <div className="mt-14 rounded-2xl border border-accent/30 bg-accent/10 p-8 text-center">
-            <h2 className="text-xl font-bold text-foreground">Butuh saran teknis untuk proyek Anda?</h2>
+            <h2 className="text-xl font-bold text-foreground">
+              Butuh saran teknis untuk proyek Anda?
+            </h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Tim rekayasa kami siap membantu memilih material dan desain yang tepat.
             </p>

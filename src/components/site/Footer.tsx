@@ -23,9 +23,21 @@ const companyLinks: FooterLink[] = [
 
 const productLinks: FooterLink[] = [
   { label: "Peralatan Dapur", to: "/produk/$slug", params: { slug: "peralatan-dapur" } },
-  { label: "Peralatan Rumah Sakit", to: "/produk/$slug", params: { slug: "peralatan-rumah-sakit" } },
-  { label: "Peralatan Laboratorium", to: "/produk/$slug", params: { slug: "peralatan-laboratorium" } },
-  { label: "Pengolahan Makanan", to: "/produk/$slug", params: { slug: "peralatan-pengolahan-makanan" } },
+  {
+    label: "Peralatan Rumah Sakit",
+    to: "/produk/$slug",
+    params: { slug: "peralatan-rumah-sakit" },
+  },
+  {
+    label: "Peralatan Laboratorium",
+    to: "/produk/$slug",
+    params: { slug: "peralatan-laboratorium" },
+  },
+  {
+    label: "Pengolahan Makanan",
+    to: "/produk/$slug",
+    params: { slug: "peralatan-pengolahan-makanan" },
+  },
   { label: "Penyimpanan Industri", to: "/produk/$slug", params: { slug: "penyimpanan-industri" } },
   { label: "Railing & Balustrade", to: "/produk/$slug", params: { slug: "railing-balustrade" } },
 ];
@@ -72,11 +84,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.45fr_1fr_1fr_1.45fr]">
           <div>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-3"
-              aria-label={COMPANY.name}
-            >
+            <Link to="/" className="inline-flex items-center gap-3" aria-label={COMPANY.name}>
               <img
                 src={logoMark}
                 alt={`Logo ${COMPANY.name}`}
@@ -90,9 +98,8 @@ export function Footer() {
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/60">
-              Melayani kebutuhan fabrikasi stainless steel custom untuk pagar,
-              railing, pintu, balkon, dan berbagai kebutuhan proyek sesuai
-              ukuran serta kondisi lokasi.
+              Melayani kebutuhan fabrikasi stainless steel custom untuk pagar, railing, pintu,
+              balkon, dan berbagai kebutuhan proyek sesuai ukuran serta kondisi lokasi.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -102,7 +109,12 @@ export function Footer() {
                   Konsultasi WhatsApp
                 </a>
               </Button>
-              <Button asChild variant="outline" size="sm" className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
+              >
                 <Link to="/contact">Minta Penawaran</Link>
               </Button>
             </div>
@@ -152,7 +164,9 @@ export function Footer() {
                 >
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                   <span>
-                    <span className="block text-xs text-primary-foreground/40">Workshop / Office</span>
+                    <span className="block text-xs text-primary-foreground/40">
+                      Workshop / Office
+                    </span>
                     {COMPANY.office}
                   </span>
                 </a>
