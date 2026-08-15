@@ -12,9 +12,7 @@ const projectImages = Object.entries(
     import: "default",
   }) as Record<string, string>,
 )
-  .sort(([a], [b]) =>
-    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }),
-  )
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
   .map(([, url]) => url);
 
 type Project = {
@@ -29,73 +27,85 @@ const PROJECTS: Project[] = [
   {
     title: "Pagar & Gerbang Stainless",
     category: "Pagar & Gerbang",
-    description: "Pekerjaan pagar dan gerbang stainless custom untuk tampilan rumah yang rapi, kokoh, dan tahan lama.",
+    description:
+      "Pekerjaan pagar dan gerbang stainless custom untuk tampilan rumah yang rapi, kokoh, dan tahan lama.",
     image: projectImages[0],
   },
   {
     title: "Railing Tangga Stainless",
     category: "Railing Tangga",
-    description: "Railing stainless untuk area tangga indoor dengan konstruksi vertikal yang sederhana dan kokoh.",
+    description:
+      "Railing stainless untuk area tangga indoor dengan konstruksi vertikal yang sederhana dan kokoh.",
     image: projectImages[1],
   },
   {
     title: "Fabrikasi & Pengelasan Stainless",
     category: "Fabrikasi Stainless",
-    description: "Proses fabrikasi dan pengelasan stainless steel yang dikerjakan secara presisi sesuai kebutuhan proyek.",
+    description:
+      "Proses fabrikasi dan pengelasan stainless steel yang dikerjakan secara presisi sesuai kebutuhan proyek.",
     image: projectImages[2],
   },
   {
     title: "Railing Tangga Indoor",
     category: "Railing Tangga",
-    description: "Railing tangga stainless dengan desain minimalis dan garis vertikal yang memberikan tampilan bersih pada interior.",
+    description:
+      "Railing tangga stainless dengan desain minimalis dan garis vertikal yang memberikan tampilan bersih pada interior.",
     image: projectImages[3],
   },
   {
     title: "Pagar Stainless Custom",
     category: "Pagar & Gerbang",
-    description: "Pagar stainless custom dengan panel dan detail dekoratif yang dibuat sesuai ukuran dan kebutuhan hunian.",
+    description:
+      "Pagar stainless custom dengan panel dan detail dekoratif yang dibuat sesuai ukuran dan kebutuhan hunian.",
     image: projectImages[4],
   },
   {
     title: "Railing Tangga Minimalis",
     category: "Railing Tangga",
-    description: "Railing tangga stainless dengan desain sederhana, proporsional, dan mudah dipadukan dengan interior modern.",
+    description:
+      "Railing tangga stainless dengan desain sederhana, proporsional, dan mudah dipadukan dengan interior modern.",
     image: projectImages[5],
   },
   {
     title: "Gerbang Stainless Custom",
     category: "Pagar & Gerbang",
-    description: "Gerbang stainless dengan kombinasi bidang dan ornamen yang dikerjakan secara custom untuk hunian.",
+    description:
+      "Gerbang stainless dengan kombinasi bidang dan ornamen yang dikerjakan secara custom untuk hunian.",
     image: projectImages[6],
   },
   {
     title: "Railing Tangga Stainless",
     category: "Railing Tangga",
-    description: "Railing stainless untuk area tangga dengan susunan vertikal yang rapi dan konstruksi yang kokoh.",
+    description:
+      "Railing stainless untuk area tangga dengan susunan vertikal yang rapi dan konstruksi yang kokoh.",
     image: projectImages[7],
   },
   {
     title: "Pagar Stainless Modern",
     category: "Pagar & Gerbang",
-    description: "Pagar stainless dengan kombinasi garis horizontal dan detail vertikal untuk tampilan fasad yang modern.",
+    description:
+      "Pagar stainless dengan kombinasi garis horizontal dan detail vertikal untuk tampilan fasad yang modern.",
     image: projectImages[8],
   },
   {
     title: "Railing Tangga Custom",
     category: "Railing Tangga",
-    description: "Railing tangga stainless custom dengan konstruksi kokoh dan finishing rapi untuk area hunian.",
+    description:
+      "Railing tangga stainless custom dengan konstruksi kokoh dan finishing rapi untuk area hunian.",
     image: projectImages[9],
   },
   {
     title: "Railing Stainless Indoor",
     category: "Railing Tangga",
-    description: "Railing stainless untuk area tangga dan bordes dengan garis vertikal yang bersih dan presisi.",
+    description:
+      "Railing stainless untuk area tangga dan bordes dengan garis vertikal yang bersih dan presisi.",
     image: projectImages[10],
   },
   {
     title: "Railing Tangga Stainless Custom",
     category: "Railing Tangga",
-    description: "Pekerjaan railing tangga stainless custom dengan desain minimalis yang menyesuaikan kondisi bangunan.",
+    description:
+      "Pekerjaan railing tangga stainless custom dengan desain minimalis yang menyesuaikan kondisi bangunan.",
     image: projectImages[11],
   },
 ].filter((project) => Boolean(project.image));
@@ -162,9 +172,7 @@ export function Projects() {
                   <span className="text-xs font-semibold uppercase tracking-widest text-accent">
                     {active.category}
                   </span>
-                  <h3 className="mt-1 text-2xl font-extrabold text-foreground">
-                    {active.title}
-                  </h3>
+                  <h3 className="mt-1 text-2xl font-extrabold text-foreground">{active.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {active.description}
                   </p>

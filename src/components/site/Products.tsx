@@ -25,7 +25,9 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         </div>
         <div className="p-6">
           <h3 className="text-lg font-bold text-foreground">{product.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{product.description}</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {product.description}
+          </p>
           <Link
             to="/produk/$slug"
             params={{ slug: product.slug }}

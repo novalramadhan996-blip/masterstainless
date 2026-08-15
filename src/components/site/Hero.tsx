@@ -28,15 +28,15 @@ export function Hero() {
             Fabrikasi Stainless Steel Jabodetabek
           </span>
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-primary-foreground sm:text-5xl lg:text-6xl">
-            Solusi Stainless Steel{" "}
-            <span className="text-gradient-gold">Custom</span>
+            Solusi Stainless Steel <span className="text-gradient-gold">Custom</span>
             <span className="mt-2 block text-2xl font-semibold text-primary-foreground/80 sm:text-3xl">
               Rapi, Kokoh, dan Sesuai Kondisi Lapangan
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-            Master Stainless melayani fabrikasi pagar, pintu, railing tangga, railing balkon, dan kebutuhan
-            stainless steel custom untuk rumah, ruko, kantor, serta bangunan komersial di Jabodetabek.
+            Master Stainless melayani fabrikasi pagar, pintu, railing tangga, railing balkon, dan
+            kebutuhan stainless steel custom untuk rumah, ruko, kantor, serta bangunan komersial di
+            Jabodetabek.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button asChild variant="gold" size="xl">

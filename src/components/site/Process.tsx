@@ -4,19 +4,23 @@ import { SectionHeading } from "./SectionHeading";
 const process = [
   {
     title: "Hubungi Kami",
-    description: "Sampaikan kebutuhan, jenis pekerjaan, ukuran, lokasi, dan gambaran proyek yang ingin dikerjakan.",
+    description:
+      "Sampaikan kebutuhan, jenis pekerjaan, ukuran, lokasi, dan gambaran proyek yang ingin dikerjakan.",
   },
   {
     title: "Survey & Pengukuran",
-    description: "Untuk pekerjaan yang membutuhkan kondisi lapangan, kami menyesuaikan ukuran dan detail berdasarkan lokasi proyek.",
+    description:
+      "Untuk pekerjaan yang membutuhkan kondisi lapangan, kami menyesuaikan ukuran dan detail berdasarkan lokasi proyek.",
   },
   {
     title: "Proses Pengerjaan",
-    description: "Setelah spesifikasi disepakati, pekerjaan masuk ke tahap persiapan material, fabrikasi, pengelasan, dan finishing.",
+    description:
+      "Setelah spesifikasi disepakati, pekerjaan masuk ke tahap persiapan material, fabrikasi, pengelasan, dan finishing.",
   },
   {
     title: "Pemasangan",
-    description: "Produk atau pekerjaan yang membutuhkan instalasi diselesaikan di lokasi dan diperiksa kembali sebelum serah terima.",
+    description:
+      "Produk atau pekerjaan yang membutuhkan instalasi diselesaikan di lokasi dan diperiksa kembali sebelum serah terima.",
   },
 ];
 
@@ -36,7 +40,9 @@ export function Process() {
               <Reveal key={step.title} delay={i * 0.06}>
                 <div
                   className={`relative flex items-start gap-6 lg:w-1/2 lg:items-center ${
-                    i % 2 === 0 ? "lg:ml-auto lg:flex-row lg:pl-12" : "lg:mr-auto lg:flex-row-reverse lg:pr-12 lg:text-right"
+                    i % 2 === 0
+                      ? "lg:ml-auto lg:flex-row lg:pl-12"
+                      : "lg:mr-auto lg:flex-row-reverse lg:pr-12 lg:text-right"
                   }`}
                 >
                   <span

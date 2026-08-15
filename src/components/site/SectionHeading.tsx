@@ -14,9 +14,7 @@ export function SectionHeading({
   align?: "center" | "left";
 }) {
   return (
-    <Reveal
-      className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : "text-left"}`}
-    >
+    <Reveal className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : "text-left"}`}>
       {eyebrow && (
         <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent">
           {eyebrow}

@@ -7,42 +7,50 @@ const SERVICES = [
   {
     icon: "Hammer",
     title: "Pembuatan Pagar Stainless",
-    description: "Pagar stainless untuk rumah, ruko, dan area komersial dengan ukuran, pola, dan finishing yang dapat disesuaikan.",
+    description:
+      "Pagar stainless untuk rumah, ruko, dan area komersial dengan ukuran, pola, dan finishing yang dapat disesuaikan.",
   },
   {
     icon: "Frame",
     title: "Railing Tangga Stainless",
-    description: "Railing tangga dengan detail sambungan yang rapi, kokoh, dan disesuaikan dengan bentuk tangga serta konsep bangunan.",
+    description:
+      "Railing tangga dengan detail sambungan yang rapi, kokoh, dan disesuaikan dengan bentuk tangga serta konsep bangunan.",
   },
   {
     icon: "Settings",
     title: "Pembuatan Balkon",
-    description: "Railing dan perlengkapan balkon stainless untuk tampilan yang bersih sekaligus membantu menjaga keamanan area.",
+    description:
+      "Railing dan perlengkapan balkon stainless untuk tampilan yang bersih sekaligus membantu menjaga keamanan area.",
   },
   {
     icon: "Flame",
     title: "Tangga & Plat Stainless",
-    description: "Pengerjaan tangga, plat, dan komponen stainless sesuai ukuran lapangan dan kebutuhan konstruksi.",
+    description:
+      "Pengerjaan tangga, plat, dan komponen stainless sesuai ukuran lapangan dan kebutuhan konstruksi.",
   },
   {
     icon: "Wrench",
     title: "Pembuatan Pintu Stainless",
-    description: "Pintu stainless untuk kebutuhan hunian, usaha, dan area kerja dengan desain yang menyesuaikan kondisi lokasi.",
+    description:
+      "Pintu stainless untuk kebutuhan hunian, usaha, dan area kerja dengan desain yang menyesuaikan kondisi lokasi.",
   },
   {
     icon: "Zap",
     title: "Cutting & Pola Stainless",
-    description: "Pemotongan dan pembuatan pola stainless untuk kebutuhan dekoratif maupun komponen fabrikasi.",
+    description:
+      "Pemotongan dan pembuatan pola stainless untuk kebutuhan dekoratif maupun komponen fabrikasi.",
   },
   {
     icon: "Hammer",
     title: "Fabrikasi Custom",
-    description: "Punya desain atau ukuran sendiri? Kami kerjakan berdasarkan kebutuhan, gambar, atau hasil pengukuran di lokasi.",
+    description:
+      "Punya desain atau ukuran sendiri? Kami kerjakan berdasarkan kebutuhan, gambar, atau hasil pengukuran di lokasi.",
   },
   {
     icon: "PencilRuler",
     title: "Survey & Pengukuran",
-    description: "Pengukuran di lokasi membantu memastikan ukuran produksi sesuai kondisi bangunan sebelum pekerjaan dimulai.",
+    description:
+      "Pengukuran di lokasi membantu memastikan ukuran produksi sesuai kondisi bangunan sebelum pekerjaan dimulai.",
   },
 ];
 

@@ -6,22 +6,26 @@ import { SectionHeading } from "./SectionHeading";
 const reasons = [
   {
     title: "Pelayanan yang Jelas",
-    description: "Kebutuhan proyek dibahas sejak awal agar spesifikasi, ukuran, material, dan hasil akhir lebih terarah.",
+    description:
+      "Kebutuhan proyek dibahas sejak awal agar spesifikasi, ukuran, material, dan hasil akhir lebih terarah.",
     icon: CheckCircle2,
   },
   {
     title: "Teknisi Berpengalaman",
-    description: "Pengerjaan ditangani dengan memperhatikan teknik fabrikasi, kekuatan konstruksi, dan kerapian detail.",
+    description:
+      "Pengerjaan ditangani dengan memperhatikan teknik fabrikasi, kekuatan konstruksi, dan kerapian detail.",
     icon: Users,
   },
   {
     title: "Pengerjaan Tepat",
-    description: "Setiap pekerjaan mengikuti ukuran dan kebutuhan lapangan sehingga hasilnya tidak sekadar terlihat baik, tetapi juga berfungsi dengan baik.",
+    description:
+      "Setiap pekerjaan mengikuti ukuran dan kebutuhan lapangan sehingga hasilnya tidak sekadar terlihat baik, tetapi juga berfungsi dengan baik.",
     icon: Ruler,
   },
   {
     title: "Proses Terukur",
-    description: "Alur pekerjaan dibuat bertahap dari konsultasi, pengukuran, produksi, quality check, hingga pemasangan.",
+    description:
+      "Alur pekerjaan dibuat bertahap dari konsultasi, pengukuran, produksi, quality check, hingga pemasangan.",
     icon: Clock3,
   },
 ];
@@ -51,7 +55,9 @@ export function WhyChooseUs() {
                     <Icon className="h-8 w-8" />
                   </span>
                   <h3 className="mt-4 text-base font-bold text-primary-foreground">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">{item.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">
+                    {item.description}
+                  </p>
                 </motion.div>
               </Reveal>
             );

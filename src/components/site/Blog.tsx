@@ -11,9 +11,7 @@ const projectImages = Object.entries(
     import: "default",
   }) as Record<string, string>,
 )
-  .sort(([a], [b]) =>
-    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }),
-  )
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
   .map(([, url]) => url)
   .filter(Boolean);
 
@@ -21,17 +19,20 @@ const PROJECTS = [
   {
     title: "Pagar & Gerbang Stainless Custom",
     category: "Pagar & Gerbang",
-    description: "Pagar dan gerbang stainless custom dengan detail dekoratif, konstruksi kokoh, dan finishing rapi untuk hunian.",
+    description:
+      "Pagar dan gerbang stainless custom dengan detail dekoratif, konstruksi kokoh, dan finishing rapi untuk hunian.",
   },
   {
     title: "Pagar Stainless Model Custom",
     category: "Pagar & Gerbang",
-    description: "Pekerjaan pagar stainless dengan desain custom yang disesuaikan dengan tampilan fasad dan kebutuhan area rumah.",
+    description:
+      "Pekerjaan pagar stainless dengan desain custom yang disesuaikan dengan tampilan fasad dan kebutuhan area rumah.",
   },
   {
     title: "Gerbang Stainless Minimalis",
     category: "Pagar & Gerbang",
-    description: "Gerbang stainless dengan garis horizontal dan tampilan minimalis yang memberikan kesan modern pada bagian depan hunian.",
+    description:
+      "Gerbang stainless dengan garis horizontal dan tampilan minimalis yang memberikan kesan modern pada bagian depan hunian.",
   },
 ];
 
@@ -70,7 +71,9 @@ export function Blog() {
                     {project.category}
                   </span>
                   <h3 className="mt-4 text-lg font-bold text-foreground">{project.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
                   <Link
                     to="/projects"
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-primary"

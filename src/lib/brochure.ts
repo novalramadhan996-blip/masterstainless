@@ -27,73 +27,85 @@ const PROJECT_BROCHURE_ITEMS: ImgItem[] = [
   {
     title: "Pagar & Gerbang Stainless",
     category: "Pagar & Gerbang",
-    description: "Pekerjaan pagar dan gerbang stainless custom untuk tampilan rumah yang rapi, kokoh, dan tahan lama.",
+    description:
+      "Pekerjaan pagar dan gerbang stainless custom untuk tampilan rumah yang rapi, kokoh, dan tahan lama.",
     image: project1,
   },
   {
     title: "Railing Tangga Stainless",
     category: "Railing Tangga",
-    description: "Railing stainless untuk area tangga indoor dengan konstruksi vertikal yang sederhana dan kokoh.",
+    description:
+      "Railing stainless untuk area tangga indoor dengan konstruksi vertikal yang sederhana dan kokoh.",
     image: project2,
   },
   {
     title: "Fabrikasi & Pengelasan Stainless",
     category: "Fabrikasi Stainless",
-    description: "Proses fabrikasi dan pengelasan stainless steel yang dikerjakan secara presisi sesuai kebutuhan proyek.",
+    description:
+      "Proses fabrikasi dan pengelasan stainless steel yang dikerjakan secara presisi sesuai kebutuhan proyek.",
     image: project3,
   },
   {
     title: "Railing Tangga Indoor",
     category: "Railing Tangga",
-    description: "Railing tangga stainless dengan desain minimalis dan garis vertikal yang memberikan tampilan bersih pada interior.",
+    description:
+      "Railing tangga stainless dengan desain minimalis dan garis vertikal yang memberikan tampilan bersih pada interior.",
     image: project4,
   },
   {
     title: "Pagar Stainless Custom",
     category: "Pagar & Gerbang",
-    description: "Pagar stainless custom dengan panel dan detail dekoratif yang dibuat sesuai ukuran dan kebutuhan hunian.",
+    description:
+      "Pagar stainless custom dengan panel dan detail dekoratif yang dibuat sesuai ukuran dan kebutuhan hunian.",
     image: project5,
   },
   {
     title: "Railing Tangga Minimalis",
     category: "Railing Tangga",
-    description: "Railing tangga stainless dengan desain sederhana, proporsional, dan mudah dipadukan dengan interior modern.",
+    description:
+      "Railing tangga stainless dengan desain sederhana, proporsional, dan mudah dipadukan dengan interior modern.",
     image: project6,
   },
   {
     title: "Gerbang Stainless Custom",
     category: "Pagar & Gerbang",
-    description: "Gerbang stainless dengan kombinasi bidang dan ornamen yang dikerjakan secara custom untuk hunian.",
+    description:
+      "Gerbang stainless dengan kombinasi bidang dan ornamen yang dikerjakan secara custom untuk hunian.",
     image: project7,
   },
   {
     title: "Railing Tangga Stainless",
     category: "Railing Tangga",
-    description: "Railing stainless untuk area tangga dengan susunan vertikal yang rapi dan konstruksi yang kokoh.",
+    description:
+      "Railing stainless untuk area tangga dengan susunan vertikal yang rapi dan konstruksi yang kokoh.",
     image: project8,
   },
   {
     title: "Pagar Stainless Modern",
     category: "Pagar & Gerbang",
-    description: "Pagar stainless dengan kombinasi garis horizontal dan detail vertikal untuk tampilan fasad yang modern.",
+    description:
+      "Pagar stainless dengan kombinasi garis horizontal dan detail vertikal untuk tampilan fasad yang modern.",
     image: project9,
   },
   {
     title: "Railing Tangga Custom",
     category: "Railing Tangga",
-    description: "Railing tangga stainless custom dengan konstruksi kokoh dan finishing rapi untuk area hunian.",
+    description:
+      "Railing tangga stainless custom dengan konstruksi kokoh dan finishing rapi untuk area hunian.",
     image: project10,
   },
   {
     title: "Railing Stainless Indoor",
     category: "Railing Tangga",
-    description: "Railing stainless untuk area tangga dan bordes dengan garis vertikal yang bersih dan presisi.",
+    description:
+      "Railing stainless untuk area tangga dan bordes dengan garis vertikal yang bersih dan presisi.",
     image: project11,
   },
   {
     title: "Railing Tangga Stainless Custom",
     category: "Railing Tangga",
-    description: "Pekerjaan railing tangga stainless custom dengan desain minimalis yang menyesuaikan kondisi bangunan.",
+    description:
+      "Pekerjaan railing tangga stainless custom dengan desain minimalis yang menyesuaikan kondisi bangunan.",
     image: project12,
   },
 ];

@@ -51,7 +51,10 @@ export const Route = createFileRoute("/gallery")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: `${SITE_URL}/gallery` },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Galeri proyek fabrikasi stainless steel Master Stainless" },
+      {
+        property: "og:image:alt",
+        content: "Galeri proyek fabrikasi stainless steel Master Stainless",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },

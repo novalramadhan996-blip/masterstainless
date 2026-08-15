@@ -41,11 +41,7 @@ export function BrochureDownload({
   return (
     <div className="inline-flex items-center gap-2">
       <Button variant={variant} size="lg" onClick={handleDownload} disabled={loading}>
-        {loading ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
-        ) : (
-          <Download className="h-4 w-4" />
-        )}
+        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
         {loading ? "Membuat PDF…" : label}
       </Button>
 

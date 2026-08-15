@@ -20,7 +20,10 @@ export const Route = createFileRoute("/products")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: `${SITE_URL}/products` },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Produk stainless steel hasil fabrikasi Master Stainless" },
+      {
+        property: "og:image:alt",
+        content: "Produk stainless steel hasil fabrikasi Master Stainless",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },

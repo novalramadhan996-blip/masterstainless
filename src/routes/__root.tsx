@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/site/Navbar";
@@ -59,7 +60,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">Halaman gagal dimuat</h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          Halaman gagal dimuat
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Terjadi kesalahan pada website. Silakan coba lagi atau kembali ke halaman utama.
         </p>
@@ -102,7 +105,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "id_ID" },
       { property: "og:url", content: SITE_URL },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Master Stainless — fabrikasi stainless steel Jabodetabek" },
+      {
+        property: "og:image:alt",
+        content: "Master Stainless — fabrikasi stainless steel Jabodetabek",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: DEFAULT_TITLE },
       { name: "twitter:description", content: DEFAULT_DESCRIPTION },
@@ -158,7 +164,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 latitude: COMPANY.mapLat,
                 longitude: COMPANY.mapLng,
               },
-              areaServed: ["Jabodetabek", "Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi", "Indonesia"],
+              areaServed: [
+                "Jabodetabek",
+                "Jakarta",
+                "Bogor",
+                "Depok",
+                "Tangerang",
+                "Bekasi",
+                "Indonesia",
+              ],
               knowsAbout: [
                 "fabrikasi stainless steel Jabodetabek",
                 "pagar stainless steel",
@@ -215,6 +229,7 @@ function RootComponent() {
       <BackToTop />
       <WhatsAppButton />
       <Toaster position="top-right" richColors />
+      <Analytics />
     </QueryClientProvider>
   );
 }
