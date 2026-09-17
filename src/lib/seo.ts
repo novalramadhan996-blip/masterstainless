@@ -1,4 +1,4 @@
-export const SITE_URL = "https://masterstainless.com";
+export const SITE_URL = "https://masterstainless.online";
 
 /** Ubah path aset lokal menjadi URL absolut untuk SEO/social cards. */
 export function absoluteUrl(pathOrUrl: string) {
