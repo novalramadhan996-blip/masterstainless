@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://masterstainless.com/sitemap.xml
+Sitemap: https://masterstainless.online/sitemap.xml
