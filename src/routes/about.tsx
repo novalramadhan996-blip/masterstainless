@@ -10,8 +10,7 @@ import factoryImg from "@/assets/factory.jpg";
 
 const OG_IMAGE = absoluteUrl(factoryImg);
 const TITLE = "Tentang Master Stainless | Fabrikasi Stainless Steel Bekasi";
-const DESCRIPTION =
-  "Kenali Master Stainless, penyedia fabrikasi stainless steel custom di Bekasi, Jawa Barat untuk kebutuhan hunian, komersial, industri, hospitality, dan fasilitas.";
+const DESCRIPTION = "Kenali Master Stainless, penyedia jasa fabrikasi stainless steel custom di Bekasi dan Jabodetabek untuk hunian, komersial, restoran, hospitality, fasilitas kesehatan, dan industri.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -22,7 +21,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: `${SITE_URL}/about` },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Pekerjaan dan fasilitas fabrikasi stainless steel Master Stainless" },
+      { property: "og:image:alt", content: "Workshop dan pekerjaan fabrikasi stainless steel Master Stainless" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
@@ -34,18 +33,5 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
-  return (
-    <>
-      <PageHeader
-        eyebrow="Tentang Kami"
-        title="Solusi Fabrikasi Stainless Steel untuk Berbagai Kebutuhan"
-        subtitle="Kami membantu mewujudkan kebutuhan stainless steel dari konsultasi dan pengukuran hingga proses fabrikasi dan pemasangan."
-      />
-      <About />
-      <Stats />
-      <Process />
-      <WhyChooseUs />
-      <Certifications />
-    </>
-  );
+  return <><PageHeader eyebrow="Tentang Master Stainless" title="Jasa Fabrikasi Stainless Steel Custom di Bekasi dan Jabodetabek" subtitle="Dari konsultasi, pengukuran, desain, fabrikasi, hingga pemasangan untuk kebutuhan rumah, bisnis, dan proyek industri." /><About /><Stats /><Process /><WhyChooseUs /><Certifications /></>;
 }
