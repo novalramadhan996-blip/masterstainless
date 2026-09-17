@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 
-export function PageHeader({ eyebrow, title, subtitle }: { eyebrow?: string; title: string; subtitle?: string }) {
+export function PageHeader({
+  eyebrow,
+  title,
+  subtitle,
+}: {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+}) {
   return (
     <section className="relative overflow-hidden bg-primary pt-32 pb-16 sm:pt-40 sm:pb-20">
       <div className="absolute inset-0 bg-gradient-hero" />
@@ -16,7 +24,9 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow?: string; tit
               {eyebrow}
             </span>
           )}
-          <h1 className="mt-4 text-4xl font-extrabold text-primary-foreground sm:text-5xl">{title}</h1>
+          <h1 className="mt-4 text-4xl font-extrabold text-primary-foreground sm:text-5xl">
+            {title}
+          </h1>
           {subtitle && (
             <p className="mx-auto mt-4 max-w-2xl text-base text-primary-foreground/70 sm:text-lg">
               {subtitle}

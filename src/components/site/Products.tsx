@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PRODUCTS, type Product } from "@/lib/site-data";
+import { PRODUCTS, type Product } from "@/lib/product-catalog";
 import { BrochureDownload } from "./BrochureDownload";
 import { Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
@@ -14,7 +14,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         <div className="aspect-[4/3] overflow-hidden">
           <img
             src={product.image}
-            alt={`${product.title} stainless steel food grade hasil fabrikasi Master Stainless — ${product.description}`}
+            alt={`${product.title} — hasil fabrikasi Master Stainless`}
             width={800}
             height={600}
             loading="lazy"
@@ -23,10 +23,11 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
         </div>
-
         <div className="p-6">
           <h3 className="text-lg font-bold text-foreground">{product.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{product.description}</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {product.description}
+          </p>
           <Link
             to="/produk/$slug"
             params={{ slug: product.slug }}
@@ -35,7 +36,6 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
             Lihat Detail
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
-
         </div>
       </div>
     </Reveal>
@@ -44,19 +44,22 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
 
 export function Products({ limit }: { limit?: number }) {
   const items = limit ? PRODUCTS.slice(0, limit) : PRODUCTS;
+
   return (
     <section id="products" className="scroll-mt-20 bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Produk Kami"
-          title="Direkayasa untuk Setiap Lingkungan"
-          description="Produk stainless steel premium yang dirancang dan diproduksi untuk memenuhi tuntutan terberat."
+          title="Pagar, Railing, dan Solusi Stainless Steel Custom"
+          description="Produk stainless steel Master Stainless untuk pagar, pintu, railing tangga, railing balkon, dan kebutuhan fabrikasi custom untuk hunian maupun bangunan komersial."
         />
+
         <motion.div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((product, i) => (
-            <ProductCard key={product.title} product={product} index={i} />
+            <ProductCard key={product.slug} product={product} index={i} />
           ))}
         </motion.div>
+
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           {limit && (
             <Button asChild variant="gold" size="lg">

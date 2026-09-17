@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/site/Navbar";
@@ -17,23 +18,30 @@ import { BackToTop } from "@/components/site/BackToTop";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { LoadingScreen } from "@/components/site/LoadingScreen";
 import { Toaster } from "@/components/ui/sonner";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { COMPANY } from "@/lib/site-data";
+import { SITE_URL, absoluteUrl } from "@/lib/seo";
+import heroImg from "@/assets/hero.jpg";
+
+const DEFAULT_TITLE = "Master Stainless | Fabrikasi Stainless Steel Jabodetabek";
+const DEFAULT_DESCRIPTION =
+  "Master Stainless melayani fabrikasi stainless steel custom di Jabodetabek untuk pagar, railing, pintu, peralatan, serta kebutuhan proyek komersial dan industri.";
+const OG_IMAGE = absoluteUrl(heroImg);
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Halaman tidak ditemukan</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          Halaman yang kamu cari tidak tersedia atau sudah dipindahkan.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Kembali ke Beranda
           </Link>
         </div>
       </div>
@@ -44,18 +52,19 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    console.error("Application error:", error);
   }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Halaman gagal dimuat
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Terjadi kesalahan pada website. Silakan coba lagi atau kembali ke halaman utama.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -65,13 +74,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Coba Lagi
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Kembali ke Beranda
           </a>
         </div>
       </div>
@@ -84,31 +93,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Master Stainless — Fabrikasi Stainless Steel Premium" },
-      {
-        name: "description",
-        content:
-          "Merekayasa solusi stainless steel yang dibangun untuk performa dan dirancang untuk presisi. Fabrikasi kustom, pemotongan laser, pengelasan, dan instalasi ke seluruh negeri.",
-      },
-      { name: "author", content: "Master Stainless" },
-      { property: "og:title", content: "Master Stainless — Fabrikasi Stainless Steel Premium" },
-      {
-        property: "og:description",
-        content:
-          "Merekayasa solusi stainless steel yang dibangun untuk performa dan dirancang untuk presisi. Fabrikasi kustom, pemotongan laser, pengelasan, dan instalasi ke seluruh negeri.",
-      },
+      { title: DEFAULT_TITLE },
+      { name: "description", content: DEFAULT_DESCRIPTION },
+      { name: "author", content: COMPANY.name },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "theme-color", content: "#ffffff" },
+      { property: "og:title", content: DEFAULT_TITLE },
+      { property: "og:description", content: DEFAULT_DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Master Stainless" },
+      { property: "og:site_name", content: COMPANY.name },
+      { property: "og:locale", content: "id_ID" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: OG_IMAGE },
+      {
+        property: "og:image:alt",
+        content: "Master Stainless — fabrikasi stainless steel Jabodetabek",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Master Stainless — Fabrikasi Stainless Steel Premium" },
-      { name: "twitter:description", content: "Merekayasa solusi stainless steel yang dibangun untuk performa dan dirancang untuk presisi. Fabrikasi kustom, pemotongan laser, pengelasan, dan instalasi ke seluruh negeri." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/905b178964c0c3337530ed611979b660/id-preview-d4043aa8--cc557626-822a-47a7-91e9-e6f099e51d76.lovable.app-1786416683655.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/905b178964c0c3337530ed611979b660/id-preview-d4043aa8--cc557626-822a-47a7-91e9-e6f099e51d76.lovable.app-1786416683655.png" },
+      { name: "twitter:title", content: DEFAULT_TITLE },
+      { name: "twitter:description", content: DEFAULT_DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
-
+      { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -121,15 +130,66 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "@id": "https://meta-craft-pro.lovable.app/#organization",
-          name: "Master Stainless",
-          description: "Fabrikasi dan manufaktur stainless steel premium.",
-          url: "https://meta-craft-pro.lovable.app",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://meta-craft-pro.lovable.app/favicon.ico",
-          },
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: COMPANY.name,
+              url: SITE_URL,
+              logo: absoluteUrl("/favicon.png"),
+              email: COMPANY.email,
+              telephone: COMPANY.phone,
+              areaServed: [
+                { "@type": "AdministrativeArea", name: "Jakarta" },
+                { "@type": "AdministrativeArea", name: "Bogor" },
+                { "@type": "AdministrativeArea", name: "Depok" },
+                { "@type": "AdministrativeArea", name: "Tangerang" },
+                { "@type": "AdministrativeArea", name: "Bekasi" },
+                { "@type": "AdministrativeArea", name: "Jabodetabek" },
+                { "@type": "Country", name: "Indonesia" },
+              ],
+            },
+            {
+              "@type": "LocalBusiness",
+              "@id": `${SITE_URL}/#localbusiness`,
+              name: COMPANY.name,
+              url: SITE_URL,
+              image: OG_IMAGE,
+              telephone: COMPANY.phone,
+              email: COMPANY.email,
+              priceRange: "$$",
+              openingHours: "Mo-Sa 08:00-18:00",
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: COMPANY.mapLat,
+                longitude: COMPANY.mapLng,
+              },
+              areaServed: [
+                "Jabodetabek",
+                "Jakarta",
+                "Bogor",
+                "Depok",
+                "Tangerang",
+                "Bekasi",
+                "Indonesia",
+              ],
+              knowsAbout: [
+                "fabrikasi stainless steel Jabodetabek",
+                "pagar stainless steel",
+                "railing stainless steel",
+                "pintu stainless steel",
+                "produk stainless steel custom",
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              name: COMPANY.name,
+              url: SITE_URL,
+              inLanguage: "id-ID",
+              publisher: { "@id": `${SITE_URL}/#organization` },
+            },
+          ],
         }),
       },
     ],
@@ -142,7 +202,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>
@@ -162,7 +222,6 @@ function RootComponent() {
       <LoadingScreen />
       <ScrollProgress />
       <Navbar />
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <main className="min-h-screen">
         <Outlet />
       </main>
@@ -170,6 +229,7 @@ function RootComponent() {
       <BackToTop />
       <WhatsAppButton />
       <Toaster position="top-right" richColors />
+      <Analytics />
     </QueryClientProvider>
   );
 }

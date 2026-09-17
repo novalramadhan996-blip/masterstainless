@@ -17,10 +17,16 @@ export const Route = createFileRoute("/projects")({
           "Jelajahi proyek stainless steel yang kami kerjakan untuk hotel, rumah sakit, restoran, pabrik, dan gudang di berbagai industri.",
       },
       { property: "og:title", content: "Proyek — Master Stainless" },
-      { property: "og:description", content: "Proyek stainless steel ternama yang dikerjakan dengan presisi." },
+      {
+        property: "og:description",
+        content: "Proyek stainless steel ternama yang dikerjakan dengan presisi.",
+      },
       { property: "og:url", content: `${SITE_URL}/projects` },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: `Proyek stainless steel ${PROJECTS[0].title} oleh Master Stainless` },
+      {
+        property: "og:image:alt",
+        content: `Proyek stainless steel ${PROJECTS[0].title} oleh Master Stainless`,
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG_IMAGE },
     ],

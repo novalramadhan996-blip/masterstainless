@@ -14,7 +14,7 @@ export const COMPANY = {
   hours: "Senin – Sabtu · 08.00 – 18.00 WIB",
   whatsapp: "62895330336479",
   mapLat: -6.202111,
-  mapLng: 107.041750,
+  mapLng: 107.04175,
   mapsUrl: "https://www.google.com/maps?q=-6.202111,107.041750",
 };
 
@@ -33,9 +33,11 @@ export const PRODUCTS: Product[] = [
   {
     slug: "peralatan-dapur",
     title: "Peralatan Dapur",
-    description: "Meja kerja, bak cuci, dan hood kelas komersial yang dirancang untuk dapur bervolume tinggi.",
+    description:
+      "Meja kerja, bak cuci, dan hood kelas komersial yang dirancang untuk dapur bervolume tinggi.",
     image: kitchen,
-    intro: "Lini peralatan dapur komersial kami dibuat untuk ritme kerja dapur hotel, restoran, dan katering berskala besar.",
+    intro:
+      "Lini peralatan dapur komersial kami dibuat untuk ritme kerja dapur hotel, restoran, dan katering berskala besar.",
     body: [
       "Setiap unit difabrikasi dari stainless steel grade 304 dengan ketebalan yang disesuaikan beban kerja. Permukaan dipoles halus agar mudah dibersihkan dan tidak menyimpan residu makanan.",
       "Rangka diperkuat dengan bracing internal sehingga meja tetap stabil meski digunakan untuk pemotongan berat setiap hari. Kaki dilengkapi adjustable feet untuk menyesuaikan lantai yang tidak rata.",
@@ -59,7 +61,8 @@ export const PRODUCTS: Product[] = [
     title: "Peralatan Rumah Sakit",
     description: "Troli, lemari, dan perlengkapan medis yang higienis dan mudah disterilkan.",
     image: hospital,
-    intro: "Perlengkapan medis stainless yang memenuhi tuntutan kebersihan ruang perawatan, ruang operasi, dan laboratorium klinis.",
+    intro:
+      "Perlengkapan medis stainless yang memenuhi tuntutan kebersihan ruang perawatan, ruang operasi, dan laboratorium klinis.",
     body: [
       "Desain tanpa sudut mati memastikan tidak ada celah tempat bakteri berkembang. Semua sambungan dilas penuh lalu dihaluskan hingga rata dengan permukaan.",
       "Material 316L direkomendasikan untuk area yang sering terpapar disinfektan agresif karena ketahanan korosinya jauh lebih tinggi.",
@@ -83,7 +86,8 @@ export const PRODUCTS: Product[] = [
     title: "Peralatan Laboratorium",
     description: "Meja lab presisi, lemari asam, dan fitting tahan korosi.",
     image: lab,
-    intro: "Furnitur dan fitting laboratorium yang presisi, stabil, dan tahan terhadap bahan kimia keras.",
+    intro:
+      "Furnitur dan fitting laboratorium yang presisi, stabil, dan tahan terhadap bahan kimia keras.",
     body: [
       "Meja lab kami dirancang dengan toleransi kerataan ketat agar instrumen sensitif bekerja akurat tanpa getaran.",
       "Lemari asam dilengkapi jalur exhaust yang dihitung sesuai volume ruang dan jenis reagen yang digunakan.",
@@ -107,7 +111,8 @@ export const PRODUCTS: Product[] = [
     title: "Peralatan Pengolahan Makanan",
     description: "Tangki, konveyor, dan permukaan yang memenuhi standar keamanan pangan.",
     image: food,
-    intro: "Peralatan produksi pangan untuk lini kerja berkelanjutan dengan standar sanitasi tinggi.",
+    intro:
+      "Peralatan produksi pangan untuk lini kerja berkelanjutan dengan standar sanitasi tinggi.",
     body: [
       "Tangki dan hopper difabrikasi dengan radius dalam yang cukup besar agar mudah dibersihkan dan tidak menahan produk.",
       "Konveyor dirancang dengan sistem quick-release sehingga proses sanitasi harian bisa dilakukan cepat tanpa alat khusus.",
@@ -131,7 +136,8 @@ export const PRODUCTS: Product[] = [
     title: "Penyimpanan Industri",
     description: "Rak dan sistem racking heavy-duty untuk gudang dan pabrik.",
     image: storage,
-    intro: "Sistem penyimpanan heavy-duty yang dihitung berdasarkan beban aktual dan alur material di fasilitas Anda.",
+    intro:
+      "Sistem penyimpanan heavy-duty yang dihitung berdasarkan beban aktual dan alur material di fasilitas Anda.",
     body: [
       "Setiap rak dihitung kapasitas bebannya oleh tim engineering, lengkap dengan faktor keamanan dan simulasi pembebanan.",
       "Konfigurasi bay dan tinggi level disesuaikan dengan dimensi pallet serta jangkauan forklift yang digunakan.",
@@ -155,7 +161,8 @@ export const PRODUCTS: Product[] = [
     title: "Railing & Balustrade",
     description: "Railing arsitektural dan balustrade kaca dengan finishing sempurna.",
     image: handrails,
-    intro: "Railing arsitektural yang menggabungkan keamanan struktural dengan tampilan yang bersih dan elegan.",
+    intro:
+      "Railing arsitektural yang menggabungkan keamanan struktural dengan tampilan yang bersih dan elegan.",
     body: [
       "Sambungan dilas penuh lalu dipoles hingga garis las tidak terlihat — detail inilah yang membedakan railing kelas premium.",
       "Balustrade kaca menggunakan tempered laminated glass dengan spigot atau clamp stainless sesuai konsep desain.",
@@ -203,7 +210,8 @@ export const PRODUCTS: Product[] = [
     title: "Meja Kerja",
     description: "Meja kerja stainless yang diperkuat untuk area produksi dan persiapan.",
     image: kitchen,
-    intro: "Meja kerja produksi dengan top plate diperkuat agar tidak melendut walau dipakai untuk pekerjaan berat.",
+    intro:
+      "Meja kerja produksi dengan top plate diperkuat agar tidak melendut walau dipakai untuk pekerjaan berat.",
     body: [
       "Top plate didukung rangka sub-frame sehingga permukaan tetap rata dalam pemakaian jangka panjang.",
       "Tersedia opsi undershelf, backsplash, drawer, dan lubang utilitas sesuai alur kerja tim Anda.",
@@ -227,7 +235,8 @@ export const PRODUCTS: Product[] = [
     title: "Rak Susun",
     description: "Rak dinding dan lantai modular dengan kapasitas beban yang dapat diatur.",
     image: storage,
-    intro: "Rak modular yang bisa diatur ketinggian levelnya mengikuti perubahan kebutuhan penyimpanan.",
+    intro:
+      "Rak modular yang bisa diatur ketinggian levelnya mengikuti perubahan kebutuhan penyimpanan.",
     body: [
       "Sistem level adjustable memudahkan penyesuaian saat jenis barang yang disimpan berubah.",
       "Tersedia varian rak dinding untuk area kerja sempit dan rak lantai untuk penyimpanan volume besar.",
@@ -272,25 +281,88 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
-
 export const PROJECTS = [
-  { title: "Hotel Aurora Grand", category: "Hotel", image: kitchen, description: "Fit-out stainless lengkap untuk area belakang dapur di tiga dapur dan dua area persiapan banquet hotel bintang lima." },
-  { title: "RS St. Vincent", category: "Rumah Sakit", image: hospital, description: "Perlengkapan steril, meja operasi, dan lemari modular yang memenuhi standar kesehatan ketat." },
-  { title: "Restoran Harborview", category: "Restoran", image: kitchen, description: "Lini dapur terbuka kustom dengan meja kerja, hood, dan konter berpendingin." },
-  { title: "Gudang Metro Central", category: "Gudang", image: storage, description: "Racking heavy-duty dan rak mezzanine untuk pusat distribusi seluas 3.700 m²." },
-  { title: "Pabrik Pangan Northfield", category: "Pabrik", image: food, description: "Tangki pengolahan higienis dan permukaan konveyor untuk produksi berkelanjutan." },
-  { title: "Lobi Civic Tower", category: "Dapur Komersial", image: handrails, description: "Railing arsitektural dan balustrade untuk pengembangan komersial ikonik." },
+  {
+    title: "Hotel Aurora Grand",
+    category: "Hotel",
+    image: kitchen,
+    description:
+      "Fit-out stainless lengkap untuk area belakang dapur di tiga dapur dan dua area persiapan banquet hotel bintang lima.",
+  },
+  {
+    title: "RS St. Vincent",
+    category: "Rumah Sakit",
+    image: hospital,
+    description:
+      "Perlengkapan steril, meja operasi, dan lemari modular yang memenuhi standar kesehatan ketat.",
+  },
+  {
+    title: "Restoran Harborview",
+    category: "Restoran",
+    image: kitchen,
+    description: "Lini dapur terbuka kustom dengan meja kerja, hood, dan konter berpendingin.",
+  },
+  {
+    title: "Gudang Metro Central",
+    category: "Gudang",
+    image: storage,
+    description: "Racking heavy-duty dan rak mezzanine untuk pusat distribusi seluas 3.700 m².",
+  },
+  {
+    title: "Pabrik Pangan Northfield",
+    category: "Pabrik",
+    image: food,
+    description: "Tangki pengolahan higienis dan permukaan konveyor untuk produksi berkelanjutan.",
+  },
+  {
+    title: "Lobi Civic Tower",
+    category: "Dapur Komersial",
+    image: handrails,
+    description: "Railing arsitektural dan balustrade untuk pengembangan komersial ikonik.",
+  },
 ];
 
 export const SERVICES = [
-  { icon: "Hammer", title: "Fabrikasi Kustom", description: "Fabrikasi khusus menyeluruh yang disesuaikan dengan kebutuhan Anda." },
-  { icon: "Zap", title: "Pemotongan Laser", description: "Pemotongan laser CNC presisi tinggi untuk hasil bersih dan konsisten." },
-  { icon: "Frame", title: "Pembentukan Logam", description: "Bending, rolling, dan pembentukan geometri stainless yang kompleks." },
-  { icon: "Flame", title: "Pengelasan", description: "Pengelasan TIG dan MIG bersertifikat dengan sambungan mulus dan tahan lama." },
-  { icon: "Wrench", title: "Instalasi", description: "Instalasi profesional di lokasi ke seluruh penjuru negeri." },
-  { icon: "Settings", title: "Perawatan", description: "Servis terjadwal agar peralatan Anda selalu prima." },
-  { icon: "PencilRuler", title: "Desain Rekayasa", description: "Dukungan desain dan rekayasa berbasis CAD sejak hari pertama." },
-  { icon: "ShieldCheck", title: "Inspeksi Kualitas", description: "Inspeksi ketat di setiap tahap produksi." },
+  {
+    icon: "Hammer",
+    title: "Fabrikasi Kustom",
+    description: "Fabrikasi khusus menyeluruh yang disesuaikan dengan kebutuhan Anda.",
+  },
+  {
+    icon: "Zap",
+    title: "Pemotongan Laser",
+    description: "Pemotongan laser CNC presisi tinggi untuk hasil bersih dan konsisten.",
+  },
+  {
+    icon: "Frame",
+    title: "Pembentukan Logam",
+    description: "Bending, rolling, dan pembentukan geometri stainless yang kompleks.",
+  },
+  {
+    icon: "Flame",
+    title: "Pengelasan",
+    description: "Pengelasan TIG dan MIG bersertifikat dengan sambungan mulus dan tahan lama.",
+  },
+  {
+    icon: "Wrench",
+    title: "Instalasi",
+    description: "Instalasi profesional di lokasi ke seluruh penjuru negeri.",
+  },
+  {
+    icon: "Settings",
+    title: "Perawatan",
+    description: "Servis terjadwal agar peralatan Anda selalu prima.",
+  },
+  {
+    icon: "PencilRuler",
+    title: "Desain Rekayasa",
+    description: "Dukungan desain dan rekayasa berbasis CAD sejak hari pertama.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Inspeksi Kualitas",
+    description: "Inspeksi ketat di setiap tahap produksi.",
+  },
 ];
 
 export const WHY_CHOOSE = [
@@ -305,8 +377,14 @@ export const WHY_CHOOSE = [
 ];
 
 export const PROCESS = [
-  { title: "Konsultasi", description: "Kami mendengarkan kebutuhan dan menilai lingkup proyek Anda." },
-  { title: "Perencanaan", description: "Penjadwalan, anggaran, dan perencanaan material yang detail." },
+  {
+    title: "Konsultasi",
+    description: "Kami mendengarkan kebutuhan dan menilai lingkup proyek Anda.",
+  },
+  {
+    title: "Perencanaan",
+    description: "Penjadwalan, anggaran, dan perencanaan material yang detail.",
+  },
   { title: "Desain", description: "Rekayasa CAD dan gambar teknis untuk persetujuan." },
   { title: "Produksi", description: "Fabrikasi presisi di fasilitas bersertifikat kami." },
   { title: "Cek Kualitas", description: "Inspeksi multi-titik sesuai standar ISO." },
@@ -331,10 +409,30 @@ export const INDUSTRIES = [
 ];
 
 export const TESTIMONIALS = [
-  { name: "Maria Alvarez", role: "Direktur Operasional, Aurora Hotels", quote: "Master Stainless menyelesaikan fit-out dapur dengan sempurna, tepat waktu dan sesuai anggaran. Kualitas finishing-nya luar biasa." },
-  { name: "dr. James Whitford", role: "Kepala Fasilitas, St. Vincent Medical", quote: "Perhatian mereka pada standar higienis dan presisi persis seperti yang dibutuhkan rumah sakit kami. Mitra yang andal." },
-  { name: "Sophie Tan", role: "Chef Utama, Harborview", quote: "Meja kerja kustom mengubah alur kerja dapur kami. Dirancang dengan indah dan dibuat untuk tahan lama." },
-  { name: "Daniel Brooks", role: "Manajer Pabrik, Northfield Foods", quote: "Kokoh, aman untuk pangan, dan dipasang dengan ahli. Master Stainless memahami kebutuhan produksi kami sejak awal." },
+  {
+    name: "Maria Alvarez",
+    role: "Direktur Operasional, Aurora Hotels",
+    quote:
+      "Master Stainless menyelesaikan fit-out dapur dengan sempurna, tepat waktu dan sesuai anggaran. Kualitas finishing-nya luar biasa.",
+  },
+  {
+    name: "dr. James Whitford",
+    role: "Kepala Fasilitas, St. Vincent Medical",
+    quote:
+      "Perhatian mereka pada standar higienis dan presisi persis seperti yang dibutuhkan rumah sakit kami. Mitra yang andal.",
+  },
+  {
+    name: "Sophie Tan",
+    role: "Chef Utama, Harborview",
+    quote:
+      "Meja kerja kustom mengubah alur kerja dapur kami. Dirancang dengan indah dan dibuat untuk tahan lama.",
+  },
+  {
+    name: "Daniel Brooks",
+    role: "Manajer Pabrik, Northfield Foods",
+    quote:
+      "Kokoh, aman untuk pangan, dan dipasang dengan ahli. Master Stainless memahami kebutuhan produksi kami sejak awal.",
+  },
 ];
 
 export const CERTIFICATIONS = [
@@ -362,7 +460,8 @@ export const BLOG: BlogPost[] = [
     slug: "memilih-grade-stainless-steel",
     category: "Rekayasa",
     title: "Memilih Grade Stainless Steel yang Tepat",
-    excerpt: "304 vs 316 dan lainnya — cara memilih paduan yang tepat untuk lingkungan dan anggaran Anda.",
+    excerpt:
+      "304 vs 316 dan lainnya — cara memilih paduan yang tepat untuk lingkungan dan anggaran Anda.",
     image: lab,
     date: "12 Jun 2026",
     isoDate: "2026-06-12",
@@ -473,14 +572,31 @@ export const BLOG: BlogPost[] = [
   },
 ];
 
-
 export const FAQS = [
-  { q: "Grade stainless steel apa saja yang Anda kerjakan?", a: "Kami mengerjakan semua grade arsitektural dan industri umum, termasuk 304 dan 316/316L, serta paduan khusus atas permintaan." },
-  { q: "Apakah Anda menangani instalasi di seluruh negeri?", a: "Ya. Tim instalasi kami beroperasi di seluruh negeri dan kami mengoordinasikan logistik menyeluruh untuk setiap proyek." },
-  { q: "Berapa lama proyek pada umumnya berlangsung?", a: "Waktu pengerjaan tergantung lingkup, namun sebagian besar fabrikasi standar dikirim dalam 2–4 minggu. Kami mengonfirmasi timeline pasti saat perencanaan." },
-  { q: "Bisakah Anda membuat desain sepenuhnya kustom?", a: "Tentu saja. Fabrikasi kustom adalah keahlian kami — kirimkan gambar atau kebutuhan Anda dan insinyur kami akan menanganinya." },
-  { q: "Apakah produk Anda bersertifikat?", a: "Seluruh produksi mengikuti standar ISO 9001:2015 dengan ketertelusuran material penuh dan inspeksi kualitas di setiap tahap." },
-  { q: "Apakah Anda menawarkan perawatan purnajual?", a: "Ya, kami menyediakan servis terjadwal dan dukungan responsif agar peralatan Anda awet bertahun-tahun." },
+  {
+    q: "Grade stainless steel apa saja yang Anda kerjakan?",
+    a: "Kami mengerjakan semua grade arsitektural dan industri umum, termasuk 304 dan 316/316L, serta paduan khusus atas permintaan.",
+  },
+  {
+    q: "Apakah Anda menangani instalasi di seluruh negeri?",
+    a: "Ya. Tim instalasi kami beroperasi di seluruh negeri dan kami mengoordinasikan logistik menyeluruh untuk setiap proyek.",
+  },
+  {
+    q: "Berapa lama proyek pada umumnya berlangsung?",
+    a: "Waktu pengerjaan tergantung lingkup, namun sebagian besar fabrikasi standar dikirim dalam 2–4 minggu. Kami mengonfirmasi timeline pasti saat perencanaan.",
+  },
+  {
+    q: "Bisakah Anda membuat desain sepenuhnya kustom?",
+    a: "Tentu saja. Fabrikasi kustom adalah keahlian kami — kirimkan gambar atau kebutuhan Anda dan insinyur kami akan menanganinya.",
+  },
+  {
+    q: "Apakah produk Anda bersertifikat?",
+    a: "Seluruh produksi mengikuti standar ISO 9001:2015 dengan ketertelusuran material penuh dan inspeksi kualitas di setiap tahap.",
+  },
+  {
+    q: "Apakah Anda menawarkan perawatan purnajual?",
+    a: "Ya, kami menyediakan servis terjadwal dan dukungan responsif agar peralatan Anda awet bertahun-tahun.",
+  },
 ];
 
 export const NAV_LINKS = [
