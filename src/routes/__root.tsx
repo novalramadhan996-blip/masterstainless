@@ -21,9 +21,9 @@ import { COMPANY } from "@/lib/site-data";
 import { SITE_URL, absoluteUrl } from "@/lib/seo";
 import heroImg from "@/assets/hero.jpg";
 
-const DEFAULT_TITLE = "Master Stainless | Fabrikasi Stainless Steel Jabodetabek";
+const DEFAULT_TITLE = "Jasa Fabrikasi Stainless Steel Jabodetabek | Master Stainless";
 const DEFAULT_DESCRIPTION =
-  "Master Stainless melayani fabrikasi stainless steel custom di Jabodetabek untuk pagar, railing, pintu, peralatan, serta kebutuhan proyek komersial dan industri.";
+  "Master Stainless menyediakan jasa fabrikasi stainless steel custom di Jabodetabek: pagar, railing, pintu, kitchen equipment, dan kebutuhan proyek komersial serta industri.";
 const OG_IMAGE = absoluteUrl(heroImg);
 
 function NotFoundComponent() {
@@ -32,17 +32,8 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Halaman tidak ditemukan</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Halaman yang kamu cari tidak tersedia atau sudah dipindahkan.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Kembali ke Beranda
-          </Link>
-        </div>
+        <p className="mt-2 text-sm text-muted-foreground">Halaman yang kamu cari tidak tersedia atau sudah dipindahkan.</p>
+        <div className="mt-6"><Link to="/" className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">Kembali ke Beranda</Link></div>
       </div>
     </div>
   );
@@ -51,34 +42,15 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-
-  useEffect(() => {
-    console.error("Application error:", error);
-  }, [error]);
-
+  useEffect(() => { console.error("Application error:", error); }, [error]);
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">Halaman gagal dimuat</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Terjadi kesalahan pada website. Silakan coba lagi atau kembali ke halaman utama.
-        </p>
+        <p className="mt-2 text-sm text-muted-foreground">Terjadi kesalahan pada website. Silakan coba lagi atau kembali ke halaman utama.</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Coba Lagi
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Kembali ke Beranda
-          </a>
+          <button onClick={() => { router.invalidate(); reset(); }} className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">Coba Lagi</button>
+          <a href="/" className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">Kembali ke Beranda</a>
         </div>
       </div>
     </div>
@@ -102,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "id_ID" },
       { property: "og:url", content: SITE_URL },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Master Stainless — fabrikasi stainless steel Jabodetabek" },
+      { property: "og:image:alt", content: "Master Stainless — jasa fabrikasi stainless steel custom Jabodetabek" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: DEFAULT_TITLE },
       { name: "twitter:description", content: DEFAULT_DESCRIPTION },
@@ -114,71 +86,59 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
-      },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Organization",
-              "@id": `${SITE_URL}/#organization`,
-              name: COMPANY.name,
-              url: SITE_URL,
-              logo: absoluteUrl("/favicon.png"),
-              email: COMPANY.email,
-              telephone: COMPANY.phone,
-              areaServed: [
-                { "@type": "AdministrativeArea", name: "Jakarta" },
-                { "@type": "AdministrativeArea", name: "Bogor" },
-                { "@type": "AdministrativeArea", name: "Depok" },
-                { "@type": "AdministrativeArea", name: "Tangerang" },
-                { "@type": "AdministrativeArea", name: "Bekasi" },
-                { "@type": "AdministrativeArea", name: "Jabodetabek" },
-                { "@type": "Country", name: "Indonesia" },
-              ],
-            },
-            {
-              "@type": "LocalBusiness",
-              "@id": `${SITE_URL}/#localbusiness`,
-              name: COMPANY.name,
-              url: SITE_URL,
-              image: OG_IMAGE,
-              telephone: COMPANY.phone,
-              email: COMPANY.email,
-              priceRange: "$$",
-              openingHours: "Mo-Sa 08:00-18:00",
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: COMPANY.mapLat,
-                longitude: COMPANY.mapLng,
-              },
-              areaServed: ["Jabodetabek", "Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi", "Indonesia"],
-              knowsAbout: [
-                "fabrikasi stainless steel Jabodetabek",
-                "pagar stainless steel",
-                "railing stainless steel",
-                "pintu stainless steel",
-                "produk stainless steel custom",
-              ],
-            },
-            {
-              "@type": "WebSite",
-              "@id": `${SITE_URL}/#website`,
-              name: COMPANY.name,
-              url: SITE_URL,
-              inLanguage: "id-ID",
-              publisher: { "@id": `${SITE_URL}/#organization` },
-            },
-          ],
-        }),
-      },
-    ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            name: COMPANY.name,
+            url: SITE_URL,
+            logo: absoluteUrl("/favicon.png"),
+            email: COMPANY.email,
+            telephone: COMPANY.phone,
+            areaServed: ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi", "Jabodetabek", "Indonesia"],
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": `${SITE_URL}/#localbusiness`,
+            name: COMPANY.name,
+            url: SITE_URL,
+            image: OG_IMAGE,
+            telephone: COMPANY.phone,
+            email: COMPANY.email,
+            priceRange: "$$",
+            openingHours: "Mo-Sa 08:00-18:00",
+            geo: { "@type": "GeoCoordinates", latitude: COMPANY.mapLat, longitude: COMPANY.mapLng },
+            areaServed: ["Jabodetabek", "Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi", "Indonesia"],
+            knowsAbout: [
+              "jasa fabrikasi stainless steel Jabodetabek",
+              "fabrikasi stainless steel Bekasi",
+              "stainless steel custom",
+              "pagar stainless steel",
+              "railing stainless steel",
+              "pintu stainless steel",
+              "kitchen equipment stainless steel",
+              "stainless steel untuk rumah sakit",
+              "stainless steel untuk restoran",
+              "stainless steel untuk industri",
+            ],
+          },
+          {
+            "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
+            name: COMPANY.name,
+            url: SITE_URL,
+            inLanguage: "id-ID",
+            publisher: { "@id": `${SITE_URL}/#organization` },
+          },
+        ],
+      }),
+    }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -187,34 +147,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="id">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
+  return <html lang="id"><head><HeadContent /></head><body>{children}<Scripts /></body></html>;
 }
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      <LoadingScreen />
-      <ScrollProgress />
-      <Navbar />
-      <main className="min-h-screen">
-        <Outlet />
-      </main>
-      <Footer />
-      <BackToTop />
-      <WhatsAppButton />
-      <Toaster position="top-right" richColors />
-    </QueryClientProvider>
-  );
+  return <QueryClientProvider client={queryClient}><LoadingScreen /><ScrollProgress /><Navbar /><main className="min-h-screen"><Outlet /></main><Footer /><BackToTop /><WhatsAppButton /><Toaster position="top-right" richColors /></QueryClientProvider>;
 }
