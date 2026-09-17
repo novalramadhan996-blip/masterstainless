@@ -6,9 +6,8 @@ import { SITE_URL, absoluteUrl } from "@/lib/seo";
 import factoryImg from "@/assets/factory.jpg";
 
 const OG_IMAGE = absoluteUrl(factoryImg);
-const TITLE = "Kontak Master Stainless | Minta Penawaran Fabrikasi";
-const DESCRIPTION =
-  "Hubungi Master Stainless untuk konsultasi dan penawaran fabrikasi stainless steel custom di Bekasi dan Jawa Barat, termasuk pagar, railing, pintu, dan kebutuhan proyek.";
+const TITLE = "Kontak Master Stainless | Penawaran Fabrikasi Stainless Steel";
+const DESCRIPTION = "Hubungi Master Stainless untuk konsultasi dan penawaran jasa fabrikasi stainless steel custom di Bekasi dan Jabodetabek, termasuk pagar, railing, pintu, kitchen equipment, dan kebutuhan proyek.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -31,15 +30,5 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  return (
-    <>
-      <PageHeader
-        eyebrow="Hubungi Kami"
-        title="Konsultasikan Kebutuhan Stainless Steel Anda"
-        subtitle="Ceritakan ukuran, desain, fungsi, atau kondisi lokasi proyek. Tim kami siap membantu menentukan solusi fabrikasi yang sesuai."
-      />
-      <Contact />
-      <FAQ />
-    </>
-  );
+  return <><PageHeader eyebrow="Konsultasi & Penawaran" title="Minta Penawaran Fabrikasi Stainless Steel" subtitle="Kirim ukuran, desain, fungsi, atau kondisi lokasi proyek. Tim Master Stainless siap membantu kebutuhan stainless steel custom Anda." /><Contact /><FAQ /></>;
 }
