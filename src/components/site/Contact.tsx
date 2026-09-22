@@ -16,17 +16,66 @@ const info = [
   { icon: Clock, label: "Jam Kerja", value: COMPANY.hours },
 ];
 
+type ContactPayload = {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  subject: string;
+  message: string;
+  website?: string;
+};
+
 export function Contact() {
   const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitting) return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload: ContactPayload = {
+      name: String(formData.get("name") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      phone: String(formData.get("phone") ?? "").trim(),
+      company: String(formData.get("company") ?? "").trim(),
+      subject: String(formData.get("subject") ?? "").trim(),
+      message: String(formData.get("message") ?? "").trim(),
+      website: String(formData.get("website") ?? "").trim(),
+    };
+
     setSubmitting(true);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = (await response.json().catch(() => ({}))) as {
+        success?: boolean;
+        message?: string;
+      };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Pesan gagal dikirim.");
+      }
+
+      form.reset();
+      toast.success("Pesan berhasil dikirim. Tim Master Stainless akan segera menghubungi Anda.");
+    } catch (error) {
+      console.error("Contact form error:", error);
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Pesan gagal dikirim. Silakan coba lagi.",
+      );
+    } finally {
       setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-      toast.success("Terima kasih! Tim kami akan menghubungi Anda dalam 24 jam.");
-    }, 900);
+    }
   };
 
   return (
@@ -46,27 +95,56 @@ export function Contact() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Nama</Label>
-                  <Input id="name" required placeholder="Nama Anda" />
+                  <Input id="name" name="name" required placeholder="Nama Anda" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" required placeholder="anda@perusahaan.com" />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="anda@perusahaan.com"
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Telepon</Label>
-                  <Input id="phone" placeholder="+62 (000) 000-0000" />
+                  <Input name="phone" id="phone" placeholder="+62 (000) 000-0000" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="company">Perusahaan</Label>
-                  <Input id="company" placeholder="Nama perusahaan" />
+                  <Input name="company" id="company" placeholder="Nama perusahaan" />
                 </div>
                 <div className="space-y-2 sm:col-span-2">
                   <Label htmlFor="subject">Subjek</Label>
-                  <Input id="subject" placeholder="Ada yang bisa kami bantu?" />
+                  <Input
+                    name="subject"
+                    id="subject"
+                    placeholder="Ada yang bisa kami bantu?"
+                  />
                 </div>
                 <div className="space-y-2 sm:col-span-2">
                   <Label htmlFor="message">Pesan</Label>
-                  <Textarea id="message" required rows={5} placeholder="Jelaskan proyek Anda..." />
+                  <Textarea
+                    name="message"
+                    id="message"
+                    required
+                    rows={5}
+                    placeholder="Jelaskan proyek Anda..."
+                  />
+                </div>
+
+                <div
+                  className="absolute -left-[9999px] h-px w-px overflow-hidden"
+                  aria-hidden="true"
+                >
+                  <Label htmlFor="website">Website</Label>
+                  <Input
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
                 </div>
               </div>
               <Button
