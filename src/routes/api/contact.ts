@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const RECIPIENT = "halo@masterstainless.co.id";
+const RECIPIENT = "ramadhannoval924@gmail.com";
 const FROM = "Master Stainless Website <noreply@masterstainless.online>";
 
 type ContactPayload = {
@@ -24,9 +24,7 @@ export const Route = createFileRoute("/api/contact")({
         try {
           const body = (await request.json()) as ContactPayload;
 
-          if (text(body.website, 200)) {
-            return Response.json({ success: true });
-          }
+          if (text(body.website, 200)) return Response.json({ success: true });
 
           const name = text(body.name, 100);
           const email = text(body.email, 254);
@@ -36,37 +34,28 @@ export const Route = createFileRoute("/api/contact")({
           const message = text(body.message, 5000);
 
           if (!name || !message || !email) {
-            return Response.json(
-              { success: false, message: "Nama, email, dan pesan wajib diisi." },
-              { status: 400 },
-            );
+            return Response.json({ success: false, message: "Nama, email, dan pesan wajib diisi." }, { status: 400 });
           }
 
           if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            return Response.json(
-              { success: false, message: "Format email tidak valid." },
-              { status: 400 },
-            );
+            return Response.json({ success: false, message: "Format email tidak valid." }, { status: 400 });
           }
 
           const apiKey = process.env.RESEND_API_KEY;
           if (!apiKey) {
             console.error("RESEND_API_KEY is not configured.");
-            return Response.json(
-              { success: false, message: "Layanan email belum dikonfigurasi." },
-              { status: 500 },
-            );
+            return Response.json({ success: false, message: "Layanan email belum dikonfigurasi." }, { status: 500 });
           }
 
           const html = `
             <div style="font-family:Arial,sans-serif;line-height:1.6;color:#222">
-              <h2 style="margin-bottom:20px">Pesan Baru dari Website Master Stainless</h2>
+              <h2>Pesan Baru dari Website Master Stainless</h2>
               <p><strong>Nama:</strong> ${name}</p>
               <p><strong>Email:</strong> ${email}</p>
               <p><strong>Telepon:</strong> ${phone || "-"}</p>
               <p><strong>Perusahaan:</strong> ${company || "-"}</p>
               <p><strong>Subjek:</strong> ${subject}</p>
-              <hr style="border:0;border-top:1px solid #ddd;margin:24px 0">
+              <hr>
               <p><strong>Pesan:</strong></p>
               <p style="white-space:pre-wrap">${message}</p>
             </div>
@@ -88,21 +77,14 @@ export const Route = createFileRoute("/api/contact")({
           });
 
           if (!resendResponse.ok) {
-            const errorBody = await resendResponse.text();
-            console.error("Resend API error:", resendResponse.status, errorBody);
-            return Response.json(
-              { success: false, message: "Pesan gagal dikirim. Silakan coba lagi." },
-              { status: 502 },
-            );
+            console.error("Resend API error:", resendResponse.status, await resendResponse.text());
+            return Response.json({ success: false, message: "Pesan gagal dikirim. Silakan coba lagi." }, { status: 502 });
           }
 
           return Response.json({ success: true });
         } catch (error) {
           console.error("Contact API error:", error);
-          return Response.json(
-            { success: false, message: "Terjadi kesalahan saat mengirim pesan." },
-            { status: 500 },
-          );
+          return Response.json({ success: false, message: "Terjadi kesalahan saat mengirim pesan." }, { status: 500 });
         }
       },
     },
